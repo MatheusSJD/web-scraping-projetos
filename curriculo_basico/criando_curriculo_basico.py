@@ -1,7 +1,14 @@
 from docx import Document
-from docx.shared import Cm
+from docx.shared import Cm, Inches
 
 curriculo = Document()
+
+margens = curriculo.sections
+for margem in margens:
+    margem.top_margin = Cm(1.5)
+    margem.bottom_margin = Cm(1.5)
+    margem.left_margin = Cm(1.5)
+    margem.right_margin = Cm(1.5)
 
 nome = curriculo.add_heading('Matheus Santos', 0)
 
